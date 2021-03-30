@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RelationDemoController;
 use App\Http\Controllers\TemporaryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/test', TemporaryController::class);
 Route::get('/getDummyResult', [TemporaryController::class, 'getDummyResult']);
+Route::get('/relationDemo', RelationDemoController::class);
+Route::get('/relationDemo/relationSql', [RelationDemoController::class, 'relationSql']);
